@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>KeyboardExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>4E90C65A1D8167A000CDE5F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E90C6731D8167DA00CDE5F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,33 @@
 		4E90C6641D8167A000CDE5F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E90C6621D8167A000CDE5F8 /* Main.storyboard */; };
 		4E90C6661D8167A000CDE5F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E90C6651D8167A000CDE5F8 /* Assets.xcassets */; };
 		4E90C6691D8167A000CDE5F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E90C6671D8167A000CDE5F8 /* LaunchScreen.storyboard */; };
+		4E90C6771D8167DA00CDE5F8 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E90C6761D8167DA00CDE5F8 /* KeyboardViewController.swift */; };
+		4E90C67B1D8167DA00CDE5F8 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4E90C6741D8167DA00CDE5F8 /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E90C6791D8167DA00CDE5F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E90C6531D8167A000CDE5F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E90C6731D8167DA00CDE5F8;
+			remoteInfo = KeyboardExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E90C67F1D8167DA00CDE5F8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4E90C67B1D8167DA00CDE5F8 /* KeyboardExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E90C65B1D8167A000CDE5F8 /* KeyboardDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +48,20 @@
 		4E90C6651D8167A000CDE5F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E90C6681D8167A000CDE5F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E90C66A1D8167A000CDE5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E90C6741D8167DA00CDE5F8 /* KeyboardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E90C6761D8167DA00CDE5F8 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		4E90C6781D8167DA00CDE5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E90C6581D8167A000CDE5F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E90C6711D8167DA00CDE5F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				4E90C65D1D8167A000CDE5F8 /* KeyboardDemo */,
+				4E90C6751D8167DA00CDE5F8 /* KeyboardExtension */,
 				4E90C65C1D8167A000CDE5F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				4E90C65B1D8167A000CDE5F8 /* KeyboardDemo.app */,
+				4E90C6741D8167DA00CDE5F8 /* KeyboardExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +102,15 @@
 			path = KeyboardDemo;
 			sourceTree = "<group>";
 		};
+		4E90C6751D8167DA00CDE5F8 /* KeyboardExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4E90C6761D8167DA00CDE5F8 /* KeyboardViewController.swift */,
+				4E90C6781D8167DA00CDE5F8 /* Info.plist */,
+			);
+			path = KeyboardExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +121,34 @@
 				4E90C6571D8167A000CDE5F8 /* Sources */,
 				4E90C6581D8167A000CDE5F8 /* Frameworks */,
 				4E90C6591D8167A000CDE5F8 /* Resources */,
+				4E90C67F1D8167DA00CDE5F8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E90C67A1D8167DA00CDE5F8 /* PBXTargetDependency */,
 			);
 			name = KeyboardDemo;
 			productName = KeyboardDemo;
 			productReference = 4E90C65B1D8167A000CDE5F8 /* KeyboardDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4E90C6731D8167DA00CDE5F8 /* KeyboardExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E90C67C1D8167DA00CDE5F8 /* Build configuration list for PBXNativeTarget "KeyboardExtension" */;
+			buildPhases = (
+				4E90C6701D8167DA00CDE5F8 /* Sources */,
+				4E90C6711D8167DA00CDE5F8 /* Frameworks */,
+				4E90C6721D8167DA00CDE5F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardExtension;
+			productName = KeyboardExtension;
+			productReference = 4E90C6741D8167DA00CDE5F8 /* KeyboardExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +161,9 @@
 				ORGANIZATIONNAME = "Pranav Kasetti";
 				TargetAttributes = {
 					4E90C65A1D8167A000CDE5F8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					4E90C6731D8167DA00CDE5F8 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -113,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				4E90C65A1D8167A000CDE5F8 /* KeyboardDemo */,
+				4E90C6731D8167DA00CDE5F8 /* KeyboardExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +198,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E90C6721D8167DA00CDE5F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +217,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E90C6701D8167DA00CDE5F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E90C6771D8167DA00CDE5F8 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E90C67A1D8167DA00CDE5F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E90C6731D8167DA00CDE5F8 /* KeyboardExtension */;
+			targetProxy = 4E90C6791D8167DA00CDE5F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E90C6621D8167A000CDE5F8 /* Main.storyboard */ = {
@@ -251,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = KeyboardDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pranav.kasetti.KeyboardDemo;
@@ -262,10 +356,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = KeyboardDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pranav.kasetti.KeyboardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4E90C67D1D8167DA00CDE5F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pranav.kasetti.KeyboardDemo.KeyboardExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E90C67E1D8167DA00CDE5F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pranav.kasetti.KeyboardDemo.KeyboardExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -286,6 +403,14 @@
 			buildConfigurations = (
 				4E90C66E1D8167A000CDE5F8 /* Debug */,
 				4E90C66F1D8167A000CDE5F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4E90C67C1D8167DA00CDE5F8 /* Build configuration list for PBXNativeTarget "KeyboardExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E90C67D1D8167DA00CDE5F8 /* Debug */,
+				4E90C67E1D8167DA00CDE5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
