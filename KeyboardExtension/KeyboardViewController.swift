@@ -13,6 +13,8 @@ class KeyboardViewController: UIInputViewController {
     @IBOutlet var nextKeyboardButton: UIButton!
     
     var capsLockOn = false
+    var allRowsStackView = UIStackView()
+    var cases=0
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -23,23 +25,52 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextKeyboardButton = UIButton(type: .System) as UIButton
+        
         view.backgroundColor = .grayColor()
         
-        let firstRowStackView = createButtonsRowStackView(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"])
-        let secondRowStackView = createButtonsRowStackView(["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"])
-        let thirdRowStacKView = createButtonsRowStackView(["A", "S", "D", "F", "G", "H", "J", "K", "L"])
-        let fourthRowStackView = createButtonsRowStackView(["Z", "X", "C", "V", "B", "N", "M"])
-        let fifthRowStackView = createButtonsRowStackView(["↑", "⇔", "Space", "←", "↵"])
-        
-        let allRowsStackView = UIStackView(arrangedSubviews: [firstRowStackView, secondRowStackView, thirdRowStacKView, fourthRowStackView, fifthRowStackView])
-        allRowsStackView.axis = .Vertical
-        allRowsStackView.alignment = .Center
-        allRowsStackView.spacing = 1
-        view.addSubview(allRowsStackView)
-        
-        allRowsStackView.translatesAutoresizingMaskIntoConstraints = false
-        allRowsStackView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
-        allRowsStackView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -1).active = true
+        createKeyboard()
+    }
+    
+    func createKeyboard() {
+        if cases==0 {
+            allRowsStackView.removeFromSuperview()
+            
+            let firstRowStackView = createButtonsRowStackView(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"])
+            let secondRowStackView = createButtonsRowStackView(["-", "/", ":", ";", "(", ")", "£", "&", "@", "\""])
+            let thirdRowStacKView = createButtonsRowStackView([".", ",", "-", "_", "+"])
+            let fourthRowStackView = createButtonsRowStackView(["🌐", "↑", "⇔", "Space", "←", "↵"])
+            
+            allRowsStackView = UIStackView(arrangedSubviews: [firstRowStackView, secondRowStackView, thirdRowStacKView, fourthRowStackView])
+            allRowsStackView.axis = .Vertical
+            allRowsStackView.alignment = .Center
+            allRowsStackView.spacing = 1
+            view.addSubview(allRowsStackView)
+            
+            allRowsStackView.translatesAutoresizingMaskIntoConstraints = false
+            allRowsStackView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+            allRowsStackView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -1).active = true
+            cases=1
+        } else if cases==1 {
+            allRowsStackView.removeFromSuperview()
+            
+            let firstRowStackView = createButtonsRowStackView(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"])
+            let secondRowStackView = createButtonsRowStackView(["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"])
+            let thirdRowStacKView = createButtonsRowStackView(["A", "S", "D", "F", "G", "H", "J", "K", "L"])
+            let fourthRowStackView = createButtonsRowStackView(["Z", "X", "C", "V", "B", "N", "M"])
+            let fifthRowStackView = createButtonsRowStackView(["🌐", "↑", "⇔", "Space", "←", "↵"])
+            
+            allRowsStackView = UIStackView(arrangedSubviews: [firstRowStackView, secondRowStackView, thirdRowStacKView, fourthRowStackView, fifthRowStackView])
+            allRowsStackView.axis = .Vertical
+            allRowsStackView.alignment = .Center
+            allRowsStackView.spacing = 1
+            view.addSubview(allRowsStackView)
+            
+            allRowsStackView.translatesAutoresizingMaskIntoConstraints = false
+            allRowsStackView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+            allRowsStackView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -1).active = true
+            cases=0
+        }
     }
     
     func createButtonsRowStackView(titles: [String]) -> UIStackView {
@@ -62,12 +93,14 @@ class KeyboardViewController: UIInputViewController {
         
         return stackView
     }
-    /*
+    
     func tappedButton(button: UIButton) {
         let keyTitle = button.titleLabel!.text
         let proxy = textDocumentProxy as UITextDocumentProxy
         
         switch keyTitle! {
+        case "🌐":
+            createKeyboard()
         case "↑":
             if capsLockOn {
                 button.backgroundColor = .lightGrayColor()
@@ -95,12 +128,6 @@ class KeyboardViewController: UIInputViewController {
             
             proxy.insertText(textToInset)
         }
-    }
- */
-    func tappedButton(button: UIButton) {
-        let keyTitle = button.titleLabel!.text
-        let proxy = textDocumentProxy as UITextDocumentProxy
-        proxy.insertText(keyTitle!)
     }
     
     override func didReceiveMemoryWarning() {
